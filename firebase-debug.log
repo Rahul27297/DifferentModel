@@ -1,0 +1,35 @@
+[debug] [2018-06-27T19:45:08.445Z] ----------------------------------------------------------------------
+[debug] [2018-06-27T19:45:08.448Z] Command:       /Users/sharduldeshpande/.nvm/versions/node/v9.4.0/bin/node /Users/sharduldeshpande/.nvm/versions/node/v9.4.0/bin/firebase deploy
+[debug] [2018-06-27T19:45:08.448Z] CLI Version:   3.18.6
+[debug] [2018-06-27T19:45:08.448Z] Platform:      darwin
+[debug] [2018-06-27T19:45:08.448Z] Node Version:  v9.4.0
+[debug] [2018-06-27T19:45:08.448Z] Time:          Thu Jun 28 2018 01:15:08 GMT+0530 (IST)
+[debug] [2018-06-27T19:45:08.448Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-27T19:45:08.459Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-27T19:45:08.459Z] > authorizing via signed-in user
+[debug] [2018-06-27T19:45:08.461Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-06-27T19:45:08.461Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/kW1Wi_hGxMOmwAP0Ojeng3dz-V3aT401rujgrQKq1r0ioPIETu79mAJmEWmuLCDJ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jun 28 2018 01:15:08 GMT+0530 (IST)
+[debug] [2018-06-27T19:45:09.032Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-27T19:45:09.050Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/differentmodel-5b6b0  
+  
+ Thu Jun 28 2018 01:15:09 GMT+0530 (IST)
+[debug] [2018-06-27T19:45:11.601Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-27T19:45:11.602Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/differentmodel-5b6b0/tokens  
+  
+ Thu Jun 28 2018 01:15:11 GMT+0530 (IST)
+[debug] [2018-06-27T19:45:12.781Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'differentmodel-5b6b0'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-06-27T19:45:22.011Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/differentmodel-5b6b0/uploads/-LG1loebQkN7DBRsRAli?fileCount=4293&message=  
+  
+ Thu Jun 28 2018 01:15:22 GMT+0530 (IST)
