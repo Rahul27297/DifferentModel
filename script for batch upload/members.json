@@ -1,0 +1,35 @@
+{
+    "members": {
+        "1" : {
+        "applications" : true,
+        "contact" : "098",
+        "email" : "asd",
+        "facilities" : true,
+        "flatno" : "111",
+        "name" : "poi",
+        "notices" : true,
+        "type" : "ten"
+        },
+        "2" : {
+        "applications" : true,
+        "contact" : "098",
+        "email" : "asd",
+        "facilities" : true,
+        "flatno" : "111",
+        "name" : "2poi",
+        "notices" : true,
+        "type" : "ten"
+        },
+        "3" : {
+        "applications" : true,
+        "contact" : "098",
+        "email" : "asd",
+        "facilities" : true,
+        "flatno" : "111",
+        "name" : "3poi",
+        "notices" : true,
+        "type" : "ten"
+        }
+    }
+
+}
