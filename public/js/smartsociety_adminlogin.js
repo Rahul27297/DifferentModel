@@ -14,6 +14,8 @@ smartSociety.prototype.adminAuth = function(){
     const email = document.getElementById('inpemail').value;
     const password = document.getElementById('inppass').value;
 
+
+
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(){
         window.location.replace('./gentelella-master/production/SmartSociety.html');
