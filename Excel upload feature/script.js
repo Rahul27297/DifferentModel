@@ -7,7 +7,6 @@ var oReq = new XMLHttpRequest();
 
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
-
 oReq.onload = function(e) {
     var arraybuffer = oReq.response;
         console.log("hi")
@@ -50,9 +49,6 @@ oReq.onload = function(e) {
 
         
     }
-
-
-
 
 
 
