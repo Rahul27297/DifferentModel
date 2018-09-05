@@ -2,13 +2,13 @@ var ref = firebase.database().ref("/Members/")
 
 
 function smartSociety(){
-    var addNoticeBtn = document.getElementById("addNoticeBtn");
-    addNoticeBtn.addEventListener('click',this.addNotice.bind(this));
+    var saveNoticeBtn = document.getElementById("saveNoticeBtn");
+    saveNoticeBtn.addEventListener('click',this.saveNotice.bind(this));
     console.log("hrllo");
 }
 
 
-smartSociety.prototype.addNotice = function(){
+smartSociety.prototype.saveNotice = function(){
     console.log("button working");
 
 

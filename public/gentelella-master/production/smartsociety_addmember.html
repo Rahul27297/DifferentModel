@@ -22,16 +22,16 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCAjhLFqRze_YF1Njd_EFLGS7L6VMgwN7Q",
-        authDomain: "differentmodel-5b6b0.firebaseapp.com",
-        databaseURL: "https://differentmodel-5b6b0.firebaseio.com",
-        projectId: "differentmodel-5b6b0",
-        storageBucket: "differentmodel-5b6b0.appspot.com",
-        messagingSenderId: "714213058362"
-      };
-      firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCAjhLFqRze_YF1Njd_EFLGS7L6VMgwN7Q",
+            authDomain: "differentmodel-5b6b0.firebaseapp.com",
+            databaseURL: "https://differentmodel-5b6b0.firebaseio.com",
+            projectId: "differentmodel-5b6b0",
+            storageBucket: "differentmodel-5b6b0.appspot.com",
+            messagingSenderId: "714213058362"
+        };
+        firebase.initializeApp(config);
     </script>
 
 </head>
@@ -77,12 +77,12 @@
                                         <li>
                                             <a href="smartsociety_addmember.html">Add Member</a>
                                         </li>
-                                        
+
                                         <li>
                                             <a href="smartsociety_searchmember.html">Search Member</a>
                                         </li>
-                                        
-                                    
+
+
                                     </ul>
                                 </li>
                                 <li>
@@ -111,10 +111,7 @@
                                             <a href="smartsociety_createnotice.html">Add Notice</a>
                                         </li>
                                         <li>
-                                            <a href="smartsociety_listallnotices.html">Update Notice</a>
-                                        </li>
-                                        <li>
-                                            <a href="smartsociety_searchnotice.html">Delete Notice</a>
+                                            <a href="smartsociety_deletenotice.html">Delete Notice</a>
                                         </li>
                                         <!--li><a href="glyphicons.html">Glyphicons</a></li>
                       <li><a href="widgets.html">Widgets</a></li>
@@ -296,7 +293,7 @@
                                 </ul>
 
                             </li>
-<!--Can be used for complaint Notifications-->
+                            <!--Can be used for complaint Notifications-->
                             <!--
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
@@ -379,71 +376,89 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
-                  <div class="page-title">
-                    <div class="title_left">
-                      <h3>Member Addition</h3>
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Member Addition</h3>
+                        </div>
                     </div>
-                  </div>
-                  <div class="clearfix"></div>
-      
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="x_panel">
-                        <div class="x_content">
-      
-                          <form class="form-horizontal form-label-left">
-                            <span class="section">Member Info</span>
-      
-                            <div class="item form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
-                              </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" type="text" >
-                              </div>
-                            </div>
-                            <div class="item form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
-                              </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
-                              </div>
-                            </div>
-                            <div class="item form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span class="required">*</span>
-                              </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
-                              </div>
-                            </div>
-                            <div class="item form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Contact Number <span class="required">*</span>
-                              </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="contactnumber" name="number" required="required" data-validate-minmax="10,10" class="form-control col-md-7 col-xs-12">
-                              </div>
-                            </div>
-                            <div class="item form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="flatno">Flat Number <span class="required">*</span>
-                              </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="flatno" type="text" name="flatno" class="optional form-control col-md-7 col-xs-12">
-                              </div>
-                            </div>
+                    <div class="clearfix"></div>
 
-                            <div class="row">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Membertype <span class="required">*</span>
-                                    </label>
-                                <div class="btn-group col-md-6 col-sm-6 col-xs-12" data-toggle="buttons">
-                                  <label class="btn btn-primary active">
-                                    <input type="radio" name="member_type" id="owner"> Owner
-                                  </label>
-                                  <label class="btn btn-primary">
-                                    <input type="radio" name="member_type" id="tenant"> Tenant
-                                  </label>
-                                  <label class="btn btn-primary">
-                                    <input type="checkbox" name="member_type" id="admin"> Admin
-                                  </label>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+
+                                    <form class="form-horizontal form-label-left">
+                                        <span class="section">Member Info</span>
+
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name"
+                                                    placeholder="both name(s) e.g Jon Doe" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Contact Number
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="contactnumber" name="number" required="required" data-validate-minmax="10,10" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="flatno">Flat Number
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="flatno" type="text" name="flatno" class="optional form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Membertype
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="btn-group col-md-6 col-sm-6 col-xs-12" data-toggle="buttons">
+                                                <label class="btn btn-primary active">
+                                                    <input type="radio" name="member_type" id="owner"> Owner
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="radio" name="member_type" id="tenant"> Tenant
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="checkbox" name="member_type" id="admin"> Admin
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <!--button type="submit" class="btn btn-primary">Cancel</button-->
+                                                <button id="send" type="button" class="btn btn-success">Add Member</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
+                            </div>
                             </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">
@@ -453,13 +468,10 @@
                               </div>
                             </div>
                           </form>
-                          
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
             <!-- /page content -->
 
             <!-- footer content -->
