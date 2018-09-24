@@ -31,6 +31,20 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCAjhLFqRze_YF1Njd_EFLGS7L6VMgwN7Q",
+            authDomain: "differentmodel-5b6b0.firebaseapp.com",
+            databaseURL: "https://differentmodel-5b6b0.firebaseio.com",
+            projectId: "differentmodel-5b6b0",
+            storageBucket: "differentmodel-5b6b0.appspot.com",
+            messagingSenderId: "714213058362"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body class="nav-md">
@@ -389,17 +403,17 @@
                                         <span class="section">Notice Details</span>
 
                                         <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Notice Subject
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeSubject">Notice Subject
                                                 <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="name" class="form-control col-md-7 col-xs-12" name="name" placeholder="" required="required" type="text">
+                                                <input id="noticeSubject" class="form-control col-md-7 col-xs-12" name="noticeSubject" placeholder="" required="required" type="text">
                                             </div>
                                         </div>
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Notice Content
+                                        <!--label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeContent">Notice Content
                                             <span class="required">*</span>
-                                        </label>
-                                        <div class="item form-group">
+                                        </label-->
+                                        <!--div class="item form-group">
 
 
                                             <div class="col-md-8 col-sm-8 col-xs-12">
@@ -500,7 +514,7 @@
                                                         <a class="btn" title="Insert picture (or just drag &amp; drop)" id="pictureBtn">
                                                             <i class="fa fa-picture-o"></i>
                                                         </a>
-                                                        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                                        <input type="file" id="noticeFile" value = "" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
                                                     </div>
 
                                                     <div class="btn-group">
@@ -513,23 +527,56 @@
                                                     </div>
                                                 </div>
 
-                                                <div id="editor-one" class="editor-wrapper placeholderText" contenteditable="true"></div>
+                                                <div contenteditable="true">
+                                                    <textarea rows="10" name="noticeContent" id="noticeContent" value="Rahul" class="form-control col-md-7 col-xs-12"></textarea>
+                                                </div>
+                                                <!--div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input id="noticeContent" class="form-control col-md-7 col-xs-12" name="noticeSubject" placeholder="" required="required" type="text">
+                                                </div-->
 
-                                                <textarea name="descr" id="descr" style="display:none;"></textarea>
+                                                <div class="item form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeFile">Notice File
+                                                        <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="file" id="noticeFile" value = "" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                                </div>
+                                                </div>
+
+                                                <div class="item form-group row">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeRecipients">Notice Recipients
+                                                        <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Tenants
+                                                                    <span class="required">*</span>
+                                                    </label>
+                                                    <input type="checkbox" id="Tenants" value = "true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                                            <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Owners
+                                                                            <span class="required">*</span>
+                                                            </label>
+                                                            <input type="checkbox" id="Owners" value = "true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                                            </div>
+                                                    
+                                                </div>
 
                                                 <br>
 
                                                 <div class="ln_solid"></div>
+
+                                                <br>
                                                 <div class="form-group">
                                                     <div class="col-md-6">
                                                         <!--button type="submit" class="btn btn-primary">Cancel</button-->
-                                                        <button id="saveNoticeBtn" type="button" class="btn btn-success">Save Notice</button>
+                                                        <button id="saveNoticeBtn" type="button" class="btn btn-success" style="margin-top: 8px;">Save Notice</button>
                                                     </div>
                                                 </div>
 
 
                                             </div>
-                                        </div>
+                                        </div-->
                                     </form>
                                 </div>
                             </div>
@@ -585,7 +632,9 @@
     <!-- starrr -->
     <script src="../vendors/starrr/dist/starrr.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <!--script src="../build/js/custom.min.js"></script-->
+
+    <script src = "../../js/smartsociety_createnotice.js"></script>
 </body>
 
 </html>
