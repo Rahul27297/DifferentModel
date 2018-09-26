@@ -16,18 +16,8 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
+
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-wysiwyg -->
-    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-    <!-- Select2 -->
-    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-    <!-- Switchery -->
-    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-    <!-- starrr -->
-    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
-    <!-- bootstrap-daterangepicker -->
-    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
@@ -45,6 +35,7 @@
         };
         firebase.initializeApp(config);
     </script>
+
 </head>
 
 <body class="nav-md">
@@ -92,6 +83,8 @@
                                         <li>
                                             <a href="smartsociety_searchmember.html">Search Member</a>
                                         </li>
+
+
                                     </ul>
                                 </li>
                                 <li>
@@ -282,8 +275,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li>
-                                        <a href="javascript:;">About Society</a>
+                                        <a href="SmartSociety.html">About Society</a>
                                     </li>
+
                                     <!--li>
                                         <a href="javascript:;">
                                             <span class="badge bg-red pull-right">50%</span>
@@ -293,13 +287,16 @@
                                     <li>
                                         <a href="javascript:;">Help</a>
                                     </li-->
+
                                     <li>
-                                        <a href="login.html">
+                                        <a href="../../index.html">
                                             <i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                     </li>
                                 </ul>
+
                             </li>
                             <!--Can be used for complaint Notifications-->
+                            <!--
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
@@ -371,7 +368,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </nav>
                 </div>
@@ -407,7 +404,8 @@
                                                 <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="noticeSubject" class="form-control col-md-7 col-xs-12" name="noticeSubject" placeholder="" required="required" type="text">
+                                                <input id="noticeSubject" class="form-control col-md-7 col-xs-12" name="noticeSubject" placeholder="" required="required"
+                                                    type="text">
                                             </div>
                                         </div>
                                         <!--label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeContent">Notice Content
@@ -534,68 +532,67 @@
                                                     <input id="noticeContent" class="form-control col-md-7 col-xs-12" name="noticeSubject" placeholder="" required="required" type="text">
                                                 </div-->
 
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeFile">Notice File
-                                                        <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="file" id="noticeFile" value = "" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
-                                                </div>
-                                                </div>
-
-                                                <div class="item form-group row">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeRecipients">Notice Recipients
-                                                        <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Tenants
-                                                                    <span class="required">*</span>
-                                                    </label>
-                                                    <input type="checkbox" id="Tenants" value = "true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                            <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Owners
-                                                                            <span class="required">*</span>
-                                                            </label>
-                                                            <input type="checkbox" id="Owners" value = "true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
-                                                            </div>
-                                                    
-                                                </div>
-
-                                                <br>
-
-                                                <div class="ln_solid"></div>
-
-                                                <br>
-                                                <div class="form-group">
-                                                    <div class="col-md-6">
-                                                        <!--button type="submit" class="btn btn-primary">Cancel</button-->
-                                                        <button id="saveNoticeBtn" type="button" class="btn btn-success" style="margin-top: 8px;">Save Notice</button>
-                                                    </div>
-                                                </div>
-
-
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeFile">Notice File
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="file" id="noticeFile" value="" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
                                             </div>
-                                        </div-->
-                                    </form>
+                                        </div>
+
+                                        <div class="item form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noticeRecipients">Notice Recipients
+                                                <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Tenants
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="checkbox" id="Tenants" value="true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <label class="control-label col-md-4 col-sm-3 col-xs-12" for="noticeRecipients">Owners
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="checkbox" id="Owners" value="true" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <br>
+
+                                        <div class="ln_solid"></div>
+
+                                        <br>
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <!--button type="submit" class="btn btn-primary">Cancel</button-->
+                                                <button id="saveNoticeBtn" type="button" class="btn btn-success" style="margin-top: 8px;">Publish Notice</button>
+                                            </div>
+                                        </div>
+
+
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /page content -->
-
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by
-                    <a href="https://colorlib.com">Colorlib</a>
-                </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
         </div>
+    </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <footer>
+
+        <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+    </div>
     </div>
 
     <!-- jQuery -->
@@ -606,35 +603,15 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="../vendors/moment/min/moment.min.js"></script>
-    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap-wysiwyg -->
-    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
-    <!-- jQuery Tags Input -->
-    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-    <!-- Switchery -->
-    <script src="../vendors/switchery/dist/switchery.min.js"></script>
-    <!-- Select2 -->
-    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
-    <!-- Parsley -->
-    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
-    <!-- Autosize -->
-    <script src="../vendors/autosize/dist/autosize.min.js"></script>
-    <!-- jQuery autocomplete -->
-    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
-    <!-- starrr -->
-    <script src="../vendors/starrr/dist/starrr.js"></script>
-    <!-- Custom Theme Scripts -->
-    <!--script src="../build/js/custom.min.js"></script-->
 
-    <script src = "../../js/smartsociety_createnotice.js"></script>
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
+    <!-- smartsociety_addmember.js -->
+    <script src="../../js/smartsociety_createnotice.js"></script>
+
+
 </body>
 
 </html>
