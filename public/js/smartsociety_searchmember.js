@@ -15,7 +15,6 @@ function smartSociety(){
     updateMemberBtn.addEventListener('click',this.updateMember.bind(this));
 
 
-<<<<<<< HEAD
     console.log("hrllo");
 
     // Search result display
@@ -150,9 +149,6 @@ function smartSociety(){
 
 
 
-=======
-    console.log("hrllo")
->>>>>>> a605f47bdc2037262075e891274a8bbaa5bb1da2
 }
 
 
