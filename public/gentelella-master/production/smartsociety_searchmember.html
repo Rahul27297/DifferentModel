@@ -20,6 +20,9 @@
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
 
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="../../css/smartsociety_searchmember.css">
+
     <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -409,6 +412,48 @@
                                               </div>
                                             </div>
                                 </form>
+                                <br>
+                                <br>
+                                <!-- Search Results -->
+                                    <div class="col-md-12" role="main">
+                                        <div class="">
+                                            <div class="page-title">
+                                                <div class="title_left">
+                                                <h3>Members List</h3>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                
+                                            <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="x_panel">
+                                                                <div class="x_title">
+                                                                    <h2>List of All Members in your Society</h2>
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                                <div class="x_content">
+                                                
+                                                                    <table class="table table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                            <th>#</th>
+                                                                            <th>Name</th>
+                                                                            <th>Email</th>
+                                                                            <th>Contact</th>
+                                                                            <th>Flat Number</th>
+                                                                            <th>Member Type</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody id="disp">
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- /Search Results -->
 
 
       <!--Hide this before search. Display only after search results not null-->
