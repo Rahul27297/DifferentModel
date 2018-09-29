@@ -38,10 +38,14 @@ oReq.onload = function(e) {
 
         var xhttp2 = new XMLHttpRequest();
         //console.log("https://us-central1-differentmodel-5b6b0.cloudfunctions.net/createMember"+"?societyID=1"+"&name="+name+"&contact="+contact+"&flatno="+flatno+"&type="+type+"&email="+email);
+<<<<<<< HEAD
 
         // xhhtp Requests are made synchronous because firebase gives too many requests error in asynch mode
 
         xhttp2.open("POST","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/createMember"+"?societyID=1"+"&name="+name+"&contact="+contact+"&flatno="+flatno+"&type="+type+"&email="+email,false);
+=======
+        xhttp2.open("POST","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/createMember"+"?societyID=1"+"&name="+name+"&contact="+contact+"&flatno="+flatno+"&type="+type+"&email="+email,true);
+>>>>>>> a605f47bdc2037262075e891274a8bbaa5bb1da2
         xhttp2.send();
         xhttp2.onreadystatechange = function(){
             if ( this.readyState == 4 && this.status == 200){
