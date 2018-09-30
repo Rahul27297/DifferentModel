@@ -1,6 +1,13 @@
 var ref = firebase.database().ref("/Members/")
 
 //console.log(ref)
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
+
+
 
 function smartSociety(){
 
@@ -31,6 +38,18 @@ function smartSociety(){
             console.log(memberList)
         
             var count = 0;
+
+            tablebody = document.createElement('tbody');
+
+            tablebodyID = document.createAttribute('id');
+            tablebodyID.value = "disp";
+            tablebody.setAttributeNode(tablebodyID);
+
+            console.log(tablebody)
+            document.getElementById("myTable").appendChild(tablebody);
+
+
+
             for(var i in memberList){
                 count += 1;
 
@@ -168,6 +187,10 @@ smartSociety.prototype.searchMember = function(){
 
     if(card==="email"){
         email = document.getElementById("email").value;
+        if(email==""){
+            window.alert("Enter a valid email");
+            return;
+        }
     }
 
     if(card==="contact"){
@@ -182,60 +205,172 @@ smartSociety.prototype.searchMember = function(){
 
 
 
-    console.log(email,contact,name,flatno)
-    console.log("https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name)
+    //console.log(email,contact,name,flatno)
+    //console.log("https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name)
+
+//    var xhttp = new XMLHttpRequest();
+//    xhttp.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name,true);
+//    xhttp.send();
+//    xhttp.onreadystatechange = function(){
+//        if ( this.readyState == 4 && this.status == 200){
+//            console.log(xhttp.responseText);
+//
+//            const memberInfo = JSON.parse(xhttp.responseText).member;
+//            console.log(memberInfo)
+//            if(memberInfo!=null){
+//                var name = "";
+//                var email = "";
+//                var contact = "";
+//                var flatno = "";
+//                var type = "";
+//
+//
+//                for(var i in memberInfo){
+//                    name = memberInfo[i].name;
+//                    email = memberInfo[i].email;
+//                    contact = memberInfo[i].contact;
+//                    flatno = memberInfo[i].flatno;
+//                    type = memberInfo[i].type;
+//                }
+//
+//
+//                document.getElementById("name").value = name;
+//                document.getElementById("emailshown").value = email;
+//                document.getElementById("contact").value = contact;
+//                document.getElementById("flatno").value = flatno;
+//                document.getElementById("member_type").value = type;
+//
+//                //Make changes to type addition UI
+//
+//                //After successful search
+//
+//                document.getElementById("displayBlock").style.visibility = "visible"
+//
+//            }
+//            else{
+//                window.alert("Member not found")
+//            }
+//
+//
+//        }
+//    }
+
+    removeElement('disp');
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name,true);
+    xhttp.open("GET","http://localhost:5000/differentmodel-5b6b0/us-central1/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name,true);
     xhttp.send();
     xhttp.onreadystatechange = function(){
         if ( this.readyState == 4 && this.status == 200){
-            console.log(xhttp.responseText);
+            const memberList = JSON.parse(xhttp.responseText).member;
 
-            const memberInfo = JSON.parse(xhttp.responseText).member;
-            console.log(memberInfo)
-            if(memberInfo!=null){
-                var name = "";
-                var email = "";
-                var contact = "";
-                var flatno = "";
-                var type = "";
-    
-    
-                for(var i in memberInfo){
-                    name = memberInfo[i].name;
-                    email = memberInfo[i].email;
-                    contact = memberInfo[i].contact;
-                    flatno = memberInfo[i].flatno;
-                    type = memberInfo[i].type;
-                }
-    
-    
-                document.getElementById("name").value = name;
-                document.getElementById("emailshown").value = email;
-                document.getElementById("contact").value = contact;
-                document.getElementById("flatno").value = flatno;
-                document.getElementById("member_type").value = type;
-    
-                //Make changes to type addition UI
-    
-                //After successful search
-    
-                document.getElementById("displayBlock").style.visibility = "visible"
-    
-            }
-            else{
-                window.alert("Member not found")
-            }
-           
+            console.log(memberList)
+
+            tablebody = document.createElement('tbody');
+
+            tablebodyID = document.createAttribute('id');
+            tablebodyID.value = "disp";
+            tablebody.setAttributeNode(tablebodyID);
+
+            console.log(tablebody)
+            document.getElementById("myTable").appendChild(tablebody);
+
+
+
+
+            var count = 0;
+            for(var i in memberList){
+                count += 1;
+
+                // Delete cross
+
+                linkcross = document.createElement('a');
+                spanele = document.createElement('span');
+                spanattr = document.createAttribute('class');
+                spanattr.value = "glyphicon glyphicon-remove";
+                spanele.setAttributeNode(spanattr);
+
+
+                hrefattr = document.createAttribute('href');
+                hrefattr.value = "../index.html";
+                linkcross.setAttributeNode(hrefattr);
+                linkcross.appendChild(spanele);
+                //console.log(linkcross)
+
+
+                // ---------------------- //
+                // Edit pencil
+
+                linkedit = document.createElement('a');
+                spanele = document.createElement('span');
+                spanattr = document.createAttribute('class');
+                spanattr.value = "glyphicon glyphicon-pencil";
+                spanele.setAttributeNode(spanattr);
+
+
+
+                hrefattr = document.createAttribute('href');
+                hrefattr.value = "../index2.html";
+                linkedit.setAttributeNode(hrefattr);
+                linkedit.appendChild(spanele);
+                //console.log(linkedit)
+
+
+
+                // Each row
+                tr = document.createElement('tr');
+                th = document.createElement('th');
+                td1 = document.createElement('td');
+                td2 = document.createElement('td');
+                td3 = document.createElement('td');
+                td4 = document.createElement('td');
+                td5 = document.createElement('td');
+
+                //for cross
+                td6 = document.createElement('td');
+
+                //for pencil(edit)
+                td7 = document.createElement('td');
+
+                var name = document.createTextNode(memberList[i].name);
+                var email = document.createTextNode(memberList[i].email);
+                var contact = document.createTextNode(memberList[i].contact);
+                var flatno = document.createTextNode(memberList[i].flatno);
+                var type = document.createTextNode(memberList[i].type);
+                var countNode = document.createTextNode(count.toString())
+
+
+
+                th.appendChild(countNode);
+                td1.appendChild(name);
+                td2.appendChild(email);
+                td3.appendChild(contact);
+                td4.appendChild(flatno);
+                td5.appendChild(type);
+
+                td6.appendChild(linkcross)
+                td7.appendChild(linkedit)
+
+                tr.appendChild(th);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+
+                tr.appendChild(td7);
+                tr.appendChild(td6);
+                document.getElementById('disp').appendChild(tr);
+
 
         }
+
+
     }
 
 
 
-
-
+    }
 }
 
 
