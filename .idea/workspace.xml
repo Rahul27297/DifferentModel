@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda06673-e798-4b63-bd6f-51baaf0c0f1c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/smartsociety_searchmember.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/smartsociety_searchmember.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,20 +52,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="367">
               <caret line="438" column="69" lean-forward="true" selection-start-line="438" selection-start-column="69" selection-end-line="438" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/smartsociety_searchmember.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="255" column="7" lean-forward="true" selection-start-line="255" selection-start-column="7" selection-end-line="255" selection-end-column="7" />
+            <state relative-caret-position="345">
+              <caret line="252" column="2" lean-forward="true" selection-start-line="252" selection-start-column="2" selection-end-line="252" selection-end-column="2" />
               <folding>
                 <element signature="e#0#16356#0" />
                 <element signature="e#0#16356#0" />
@@ -237,23 +237,23 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="438" column="69" lean-forward="true" selection-start-line="438" selection-start-column="69" selection-end-line="438" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/smartsociety_searchmember.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="255" column="7" lean-forward="true" selection-start-line="255" selection-start-column="7" selection-end-line="255" selection-end-column="7" />
+        <state relative-caret-position="345">
+          <caret line="252" column="2" lean-forward="true" selection-start-line="252" selection-start-column="2" selection-end-line="252" selection-end-column="2" />
           <folding>
             <element signature="e#0#16356#0" />
             <element signature="e#0#16356#0" />
             <element signature="e#0#12872#0" />
             <element signature="e#0#12872#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="438" column="69" lean-forward="true" selection-start-line="438" selection-start-column="69" selection-end-line="438" selection-end-column="69" />
         </state>
       </provider>
     </entry>

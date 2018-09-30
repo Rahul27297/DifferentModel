@@ -258,7 +258,7 @@ smartSociety.prototype.searchMember = function(){
     removeElement('disp');
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","http://localhost:5000/differentmodel-5b6b0/us-central1/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name,true);
+    xhttp.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email+"&contact="+contact+"&flatno="+flatno+"&name="+name,true);
     xhttp.send();
     xhttp.onreadystatechange = function(){
         if ( this.readyState == 4 && this.status == 200){
