@@ -195,12 +195,24 @@ smartSociety.prototype.searchMember = function(){
 
     if(card==="contact"){
         contact = document.getElementById("email").value;
+        if(contact==""){
+            window.alert("Enter a valid email");
+            return;
+        }
     }
     if(card==="name"){
         name = document.getElementById("email").value;
+        if(card==""){
+            window.alert("Enter a valid email");
+            return;
+        }
     }    
     if(card==="flatno"){
         flatno = document.getElementById("email").value;
+        if(flatno==""){
+            window.alert("Enter a valid email");
+            return;
+        }
     }
 
 
