@@ -223,9 +223,14 @@ smartSociety.prototype.addMember = function(){
             console.log(xhttp.responseText);
 
             const memberInfo = JSON.parse(xhttp.responseText).member;
-            if(memberInfo!=null){
+            //console.log(memberInfo);
+
+
+            var totalMemberCount = Object.keys(memberInfo).length;
+            //console.log(size)
+
+            if(totalMemberCount!=0){
                 window.alert("Member with given email ID already exists. Select a different email ID");
-    
             }
             else{
                 console.log("in addition")
