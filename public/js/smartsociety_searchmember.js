@@ -55,17 +55,33 @@ function smartSociety(){
 
                 // Delete cross
 
-                linkcross = document.createElement('a');
-                spanele = document.createElement('span');
-                spanattr = document.createAttribute('class');
-                spanattr.value = "glyphicon glyphicon-remove";
-                spanele.setAttributeNode(spanattr);
-
-
-                hrefattr = document.createAttribute('href');
-                hrefattr.value = "../index.html";
-                linkcross.setAttributeNode(hrefattr);
-                linkcross.appendChild(spanele);
+//                linkcross = document.createElement('a');
+//                amodal = document.createAttribute('data-toggle');           // pop up for cross
+//                amodal.value = "modal";
+//                linkcross.setAttributeNode(amodal);
+//
+//                bmodal = document.createAttribute('data-target');
+//                bmodal.value = "#myModal";
+//                linkcross.setAttributeNode(bmodal);
+//
+//                crossID = document.createAttribute('class');
+//                crossID.value = "memberDelete";
+//                linkcross.setAttributeNode(crossID);
+//
+//
+//
+//
+//
+//                spanele = document.createElement('span');
+//                spanattr = document.createAttribute('class');
+//                spanattr.value = "glyphicon glyphicon-remove";
+//                spanele.setAttributeNode(spanattr);
+//
+//
+////                hrefattr = document.createAttribute('href');
+////                hrefattr.value = "../index.html";
+////                linkcross.setAttributeNode(hrefattr);
+//                linkcross.appendChild(spanele);
                 //console.log(linkcross)
 
                 
@@ -73,6 +89,25 @@ function smartSociety(){
                 // Edit pencil
 
                 linkedit = document.createElement('a');
+
+
+                amodal = document.createAttribute('data-toggle');
+                amodal.value = "modal";
+                linkedit.setAttributeNode(amodal);
+
+                bmodal = document.createAttribute('data-target');
+                bmodal.value = "#myModal";
+                linkedit.setAttributeNode(bmodal);
+
+                aclass = document.createAttribute('class');
+                aclass.value = "redirect";
+                linkedit.setAttributeNode(aclass);
+
+                aid = document.createAttribute('id');
+                aid.value = "a"+count;
+                linkedit.setAttributeNode(aid);
+
+
                 spanele = document.createElement('span');
                 spanattr = document.createAttribute('class');
                 spanattr.value = "glyphicon glyphicon-pencil";
@@ -80,9 +115,9 @@ function smartSociety(){
 
             
 
-                hrefattr = document.createAttribute('href');
-                hrefattr.value = "../index2.html";
-                linkedit.setAttributeNode(hrefattr);
+//                hrefattr = document.createAttribute('href');
+//                hrefattr.value = "../index2.html";
+//                linkedit.setAttributeNode(hrefattr);
                 linkedit.appendChild(spanele);
                 //console.log(linkedit)
 
@@ -90,6 +125,15 @@ function smartSociety(){
 
                 // Each row
                 tr = document.createElement('tr');
+                trattr1 = document.createAttribute('id');
+                trattr1.value = count;
+                tr.setAttributeNode(trattr1);
+
+
+
+
+
+
                 th = document.createElement('th');
                 td1 = document.createElement('td');
                 td2 = document.createElement('td');
@@ -102,6 +146,16 @@ function smartSociety(){
 
                 //for pencil(edit)
                 td7 = document.createElement('td');
+
+                // attribute to identify email
+                emailattr = document.createAttribute('id');
+                emailattr.value = "email"+count;
+                td2.setAttributeNode(emailattr);
+
+
+
+
+
 
                 var name = document.createTextNode(memberList[i].name);
                 var email = document.createTextNode(memberList[i].email);
@@ -119,7 +173,7 @@ function smartSociety(){
                 td4.appendChild(flatno);
                 td5.appendChild(type);
 
-                td6.appendChild(linkcross)
+                //td6.appendChild(linkcross)
                 td7.appendChild(linkedit)
 
                 tr.appendChild(th);
@@ -162,10 +216,64 @@ function smartSociety(){
 
 
             }
+
+
+            $(".redirect").click(function(e){
+                console.log(this.id);
+                aid = this.id;          // ID of the clicked element
+
+                IDofRow = aid.substring(1,aid.length);
+
+
+                rowNumber = IDofRow;
+                console.log(rowNumber);
+
+
+                emailHTMLID = "email"+rowNumber;
+                console.log(emailHTMLID);
+                emailValue = document.getElementById(emailHTMLID).innerText;
+                console.log(emailValue)
+
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+emailValue,true);
+                xhttp.send();
+                xhttp.onreadystatechange = function(){
+                    if ( this.readyState == 4 && this.status == 200){
+                        const memberInfo = JSON.parse(xhttp.responseText).member;
+
+                        console.log(memberInfo);
+
+                        for(var i in memberInfo){
+                            name = memberInfo[i].name;
+                            email = memberInfo[i].email;
+                            contact = memberInfo[i].contact;
+                            flatno = memberInfo[i].flatno;
+                            type = memberInfo[i].type;
+                        }
+
+
+                        document.getElementById("name").value = name;
+                        document.getElementById("emailshown").value = email;
+                        document.getElementById("contact").value = contact;
+                        document.getElementById("flatno").value = flatno;
+                        document.getElementById("member_type").value = type;
+
+
+                        }
+                    }
+
+
+
+
+
+            });
+
+
+
+
         }
     };
-
-
 
 
 }
@@ -296,17 +404,33 @@ smartSociety.prototype.searchMember = function(){
 
                 // Delete cross
 
-                linkcross = document.createElement('a');
-                spanele = document.createElement('span');
-                spanattr = document.createAttribute('class');
-                spanattr.value = "glyphicon glyphicon-remove";
-                spanele.setAttributeNode(spanattr);
-
-
-                hrefattr = document.createAttribute('href');
-                hrefattr.value = "../index.html";
-                linkcross.setAttributeNode(hrefattr);
-                linkcross.appendChild(spanele);
+//                linkcross = document.createElement('a');
+//                amodal = document.createAttribute('data-toggle');           // pop up for cross
+//                amodal.value = "modal";
+//                linkcross.setAttributeNode(amodal);
+//
+//                bmodal = document.createAttribute('data-target');
+//                bmodal.value = "#myModal";
+//                linkcross.setAttributeNode(bmodal);
+//
+//                crossID = document.createAttribute('class');
+//                crossID.value = "memberDelete";
+//                linkcross.setAttributeNode(crossID);
+//
+//
+//
+//
+//
+//                spanele = document.createElement('span');
+//                spanattr = document.createAttribute('class');
+//                spanattr.value = "glyphicon glyphicon-remove";
+//                spanele.setAttributeNode(spanattr);
+//
+//
+////                hrefattr = document.createAttribute('href');
+////                hrefattr.value = "../index.html";
+////                linkcross.setAttributeNode(hrefattr);
+//                linkcross.appendChild(spanele);
                 //console.log(linkcross)
 
 
@@ -314,6 +438,25 @@ smartSociety.prototype.searchMember = function(){
                 // Edit pencil
 
                 linkedit = document.createElement('a');
+
+
+                amodal = document.createAttribute('data-toggle');
+                amodal.value = "modal";
+                linkedit.setAttributeNode(amodal);
+
+                bmodal = document.createAttribute('data-target');
+                bmodal.value = "#myModal";
+                linkedit.setAttributeNode(bmodal);
+
+                aclass = document.createAttribute('class');
+                aclass.value = "redirect";
+                linkedit.setAttributeNode(aclass);
+
+                aid = document.createAttribute('id');
+                aid.value = "a"+count;
+                linkedit.setAttributeNode(aid);
+
+
                 spanele = document.createElement('span');
                 spanattr = document.createAttribute('class');
                 spanattr.value = "glyphicon glyphicon-pencil";
@@ -321,9 +464,9 @@ smartSociety.prototype.searchMember = function(){
 
 
 
-                hrefattr = document.createAttribute('href');
-                hrefattr.value = "../index2.html";
-                linkedit.setAttributeNode(hrefattr);
+//                hrefattr = document.createAttribute('href');
+//                hrefattr.value = "../index2.html";
+//                linkedit.setAttributeNode(hrefattr);
                 linkedit.appendChild(spanele);
                 //console.log(linkedit)
 
@@ -331,6 +474,15 @@ smartSociety.prototype.searchMember = function(){
 
                 // Each row
                 tr = document.createElement('tr');
+                trattr1 = document.createAttribute('id');
+                trattr1.value = count;
+                tr.setAttributeNode(trattr1);
+
+
+
+
+
+
                 th = document.createElement('th');
                 td1 = document.createElement('td');
                 td2 = document.createElement('td');
@@ -343,6 +495,16 @@ smartSociety.prototype.searchMember = function(){
 
                 //for pencil(edit)
                 td7 = document.createElement('td');
+
+                // attribute to identify email
+                emailattr = document.createAttribute('id');
+                emailattr.value = "email"+count;
+                td2.setAttributeNode(emailattr);
+
+
+
+
+
 
                 var name = document.createTextNode(memberList[i].name);
                 var email = document.createTextNode(memberList[i].email);
@@ -360,7 +522,7 @@ smartSociety.prototype.searchMember = function(){
                 td4.appendChild(flatno);
                 td5.appendChild(type);
 
-                td6.appendChild(linkcross)
+                //td6.appendChild(linkcross)
                 td7.appendChild(linkedit)
 
                 tr.appendChild(th);
@@ -372,10 +534,88 @@ smartSociety.prototype.searchMember = function(){
 
                 tr.appendChild(td7);
                 tr.appendChild(td6);
+
+                //console.log(tr);
+
+                // Creates element as
+                // <tr>
+                //    <th>96</th>
+                //    <td>Gage Shelton</td>
+                //    <td>Nunc.commodo@Classaptent.co.uk</td>
+                //    <td>1631050442099</td><td>90048</td>
+                //    <td>Owner</td>
+                //    <td>
+                //        <a href="../index2.html">
+                //            <span class="glyphicon glyphicon-pencil">
+                //            </span>
+                //        </a>
+                //    </td>
+                //    <td>
+                //        <a href="../index.html">
+                //            <span class="glyphicon glyphicon-remove">
+                //            </span>
+                //        </a>
+                //    </td>
+                //</tr>
+
+
+
+
                 document.getElementById('disp').appendChild(tr);
 
 
-        }
+         }
+
+        $(".redirect").click(function(e){
+            console.log(this.id);
+            aid = this.id;          // ID of the clicked element
+
+            IDofRow = aid.substring(1,aid.length);
+
+
+            rowNumber = IDofRow;
+            console.log(rowNumber);
+
+
+            emailHTMLID = "email"+rowNumber;
+            console.log(emailHTMLID);
+            emailValue = document.getElementById(emailHTMLID).innerText;
+            console.log(emailValue)
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+emailValue,true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if ( this.readyState == 4 && this.status == 200){
+                    const memberInfo = JSON.parse(xhttp.responseText).member;
+
+                    console.log(memberInfo);
+
+                    for(var i in memberInfo){
+                        name = memberInfo[i].name;
+                        email = memberInfo[i].email;
+                        contact = memberInfo[i].contact;
+                        flatno = memberInfo[i].flatno;
+                        type = memberInfo[i].type;
+                    }
+
+
+                    document.getElementById("name").value = name;
+                    document.getElementById("emailshown").value = email;
+                    document.getElementById("contact").value = contact;
+                    document.getElementById("flatno").value = flatno;
+                    document.getElementById("member_type").value = type;
+
+
+                    }
+                }
+
+
+
+
+
+        });
 
 
     }
@@ -388,35 +628,38 @@ smartSociety.prototype.searchMember = function(){
 
 smartSociety.prototype.deleteMember = function(){
 
+    console.log("delete member in")
     var xhttpForSearch = new XMLHttpRequest();
 
 
-    var card = document.getElementsByName("searchField")[0].value;
+    //var card = document.getElementsByName("searchField")[0].value;
     
-    if(card==="email"){
-        var email = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
-        
-    }
+//    if(card==="email"){
+//        var email = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
+//
+//    }
 
-    if(card==="contact"){
-        var contact = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&contact="+contact,true);
-        
-    }
-
-    if(card==="name"){
-        var name = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&name="+name,true);
-        
-    }
-
-    if(card==="flatno"){
-        var flatno = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&flatno="+flatno,true);
-        
-    }
-    
+//    if(card==="contact"){
+//        var contact = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&contact="+contact,true);
+//
+//    }
+//
+//    if(card==="name"){
+//        var name = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&name="+name,true);
+//
+//    }
+//
+//    if(card==="flatno"){
+//        var flatno = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&flatno="+flatno,true);
+//
+//    }
+    var email = document.getElementById("emailshown").value;
+    console.log(email)
+    xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
     xhttpForSearch.send();
     xhttpForSearch.onreadystatechange = function(){
          
@@ -455,35 +698,40 @@ smartSociety.prototype.deleteMember = function(){
 }
 
 smartSociety.prototype.updateMember = function(){
-    
+
+    console.log("update member in");
+
 
     var xhttpForSearch = new XMLHttpRequest();
 
-    var card = document.getElementsByName("searchField")[0].value;
-    
-    if(card==="email"){
-        var email = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
-        
-    }
-
-    if(card==="contact"){
-        var contact = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&contact="+contact,true);
-        
-    }
-
-    if(card==="name"){
-        var name = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&name="+name,true);
-        
-    }
-
-    if(card==="flatno"){
-        var flatno = document.getElementById("email").value;
-        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&flatno="+flatno,true);
-        
-    }
+//    var card = document.getElementsByName("searchField")[0].value;
+//
+//    if(card==="email"){
+//        var email = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
+//
+//    }
+//
+//    if(card==="contact"){
+//        var contact = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&contact="+contact,true);
+//
+//    }
+//
+//    if(card==="name"){
+//        var name = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&name="+name,true);
+//
+//    }
+//
+//    if(card==="flatno"){
+//        var flatno = document.getElementById("email").value;
+//        xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&flatno="+flatno,true);
+//
+//    }
+    var email = document.getElementById("emailshown").value;
+    console.log(email)
+    xhttpForSearch.open("GET","https://us-central1-differentmodel-5b6b0.cloudfunctions.net/searchMember"+"?societyID=1"+"&email="+email,true);
     xhttpForSearch.send();
     xhttpForSearch.onreadystatechange = function(){
          
@@ -536,4 +784,7 @@ smartSociety.prototype.updateMember = function(){
 
 window.onload = function(){
     window.smartSociety = new smartSociety();
+
 };
+
+

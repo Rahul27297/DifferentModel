@@ -36,6 +36,9 @@
       };
       firebase.initializeApp(config);
     </script>
+
+
+
 </head>
 
 <body class="nav-md">
@@ -444,7 +447,7 @@
                                                                             <th>Member Type</th>
                                                                             </tr>
                                                                         </thead>
-
+                                                                        <!-- Elements from javascript are inserted here!!! -->
                                                                     </table>
                                                                 </div>
                                                             </div>
@@ -455,7 +458,7 @@
                                 <!-- /Search Results -->
 
   
-      <!--Hide this before search. Display only after search results not null-->
+      <!--Hide this before search. Display only after search results not null
                           <form id="displayBlock" class="form-horizontal form-label-left" style="visibility: hidden">
                             <span class="section">Search Result: Member Info</span>
       
@@ -501,12 +504,16 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-md-offset-3">
-                                <!--button type="submit" class="btn btn-primary">Cancel</button-->
                                 <button id="delete" type="button" class="btn btn-success">Delete Member</button>
                                 <button id="update" type="button" class="btn btn-success">Update Member</button>
                               </div>
                             </div>
                           </form>
+
+                            -->
+
+
+
                         </div>
                       </div>
                     </div>
@@ -525,6 +532,93 @@
             <!-- /footer content -->
         </div>
     </div>
+
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- my addition -->
+                <form id="displayBlock" class="form-horizontal form-label-left">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span class="section">Search Result: Member Info</span>
+                    </div>
+
+
+                    <div class="modal-body">
+
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="name"  class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email"  id="emailshown" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Contact Number <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text"  id="contact" name="number" required="required" data-validate-minmax="10,10" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="flatno">Flat Number <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="flatno"  type="text" name="flatno" class="optional form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="flatno">Member Type <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="member_type" type="text" name="member_type" class="optional form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            <!--button type="submit" class="btn btn-primary">Cancel</button-->
+                            <button id="delete" type="button" class="btn btn-success">Delete Member</button>
+                            <button id="update" type="button" class="btn btn-success">Update Member</button>
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+
+                </form>
+
+                <!-- my addition ends-->
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
