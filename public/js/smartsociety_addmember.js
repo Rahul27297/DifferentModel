@@ -138,6 +138,9 @@ function smartSociety(){
     console.log("hello");
     tst = readTextFile("data.csv");
 
+
+
+
 }
 
 
@@ -222,12 +225,12 @@ smartSociety.prototype.addMember = function(){
         if ( this.readyState == 4 && this.status == 200){
             console.log(xhttp.responseText);
 
-            const memberInfo = JSON.parse(xhttp.responseText).member;
-            //console.log(memberInfo);
+            const memberInfo = JSON.parse(xhttp.responseText).member;   //javascript object containing all members
+            //console.log(memberInfo);                                  // It should return only 1 member as each email ID
+                                                                        // is associated with only 1 member
 
-
-            var totalMemberCount = Object.keys(memberInfo).length;
-            //console.log(size)
+            var totalMemberCount = Object.keys(memberInfo).length;      // To find the length of returned javascript object
+            //console.log(size)                                         // if 1 then member already exists, 0 otherwise
 
             if(totalMemberCount!=0){
                 window.alert("Member with given email ID already exists. Select a different email ID");
@@ -258,6 +261,19 @@ smartSociety.prototype.addMember = function(){
 }
 
 
+
+
+
+
 window.onload = function(){
     window.smartSociety = new smartSociety();
+
 };
+
+$("#logout").click(function(){
+    console.log("hi");
+    localStorage.removeItem("email");
+    window.location.replace('../../index.html');
+
+
+})

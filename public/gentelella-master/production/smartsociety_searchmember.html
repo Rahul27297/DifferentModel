@@ -37,6 +37,18 @@
       firebase.initializeApp(config);
     </script>
 
+    <script>
+        //localStorage.removeItem("email");
+
+        var userEmail = localStorage.getItem('email');
+        console.log(!userEmail);
+        if(!userEmail){
+            window.alert("please login");
+            window.location.replace('../../index.html');
+        }
+
+    </script>
+
 
 
 </head>
@@ -289,8 +301,9 @@
                                         <a href="javascript:;">Help</a>
                                     </li-->
                                     <li>
-                                        <a href="../../index.html">
-                                            <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                        <a href="#" id="logout">
+                                            <i class="fa fa-sign-out pull-right"></i> Log Out
+                                        </a>
                                     </li>
                                 </ul>
                             </li>

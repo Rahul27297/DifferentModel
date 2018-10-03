@@ -18,6 +18,11 @@ smartSociety.prototype.adminAuth = function(){
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(){
+        localStorage.setItem("email",email);
+        localStorage.setItem("password",password);
+        console.log(localStorage.getItem("email"));
+
+        console.log(localStorage.getItem("password"));
         window.location.replace('./gentelella-master/production/SmartSociety.html');
     })
 
