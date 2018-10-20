@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda06673-e798-4b63-bd6f-51baaf0c0f1c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/gentelella-master/production/SmartSociety.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/gentelella-master/production/SmartSociety.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_addmember.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_addmember.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Excel upload feature/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Excel upload feature/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +15,15 @@
     <session id="405018874">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -91,15 +90,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Excel upload feature/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/smartsociety_searchmember.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8432">
+            <state relative-caret-position="408">
               <caret line="796" column="2" selection-start-line="796" selection-start-column="2" selection-end-line="796" selection-end-column="2" />
               <folding>
                 <element signature="e#0#25825#0" />
@@ -195,6 +185,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,19 +197,12 @@
             <path>
               <item name="DifferentModel" type="b2602c69:ProjectViewProjectNode" />
               <item name="DifferentModel" type="462c0819:PsiDirectoryNode" />
-              <item name="Excel upload feature" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DifferentModel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DifferentModel" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,9 +242,8 @@
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5037453" side_tool="true" weight="0.1952079" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49625468" visible="true" weight="0.27202255" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49625468" visible="true" weight="0.27202255" />
       <window_info id="Structure" order="3" sideWeight="0.50120485" side_tool="true" weight="0.17054264" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3972028" />
@@ -269,7 +253,8 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.3288889" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24895105" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24895105" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Palette&#9;" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -344,44 +329,10 @@
         <state relative-caret-position="-5454" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
+    <entry file="file://$PROJECT_DIR$/Excel upload feature/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4545">
-          <caret line="303" column="50" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/SmartSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4275">
-          <caret line="285" column="62" selection-start-line="285" selection-start-column="62" selection-end-line="285" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="90" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_addfacility.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_adminlogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="32" selection-start-line="25" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_searchmember.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8432">
-          <caret line="796" column="2" selection-start-line="796" selection-start-column="2" selection-end-line="796" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#25825#0" />
-          </folding>
+        <state relative-caret-position="855">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -392,6 +343,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_addmember.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4125">
+          <caret line="275" column="4" selection-start-line="275" selection-start-column="4" selection-end-line="275" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/SmartSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4275">
+          <caret line="285" column="62" selection-start-line="285" selection-start-column="62" selection-end-line="285" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/gentelella-master/production/smartsociety_searchmember.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4545">
+          <caret line="303" column="50" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_adminlogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="32" selection-start-line="25" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_addfacility.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/SmartSociety.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -399,10 +381,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_addmember.js">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4125">
-          <caret line="275" column="4" selection-start-line="275" selection-start-column="4" selection-end-line="275" selection-end-column="4" />
+        <state relative-caret-position="270">
+          <caret line="18" column="90" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/smartsociety_searchmember.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="796" column="2" selection-start-line="796" selection-start-column="2" selection-end-line="796" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#25825#0" />
+          </folding>
         </state>
       </provider>
     </entry>
