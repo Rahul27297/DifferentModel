@@ -1,19 +1,98 @@
+var storage = firebase.storage();
 var storageref = firebase.storage();
 
-var smartSociety = function () {
+var smartSociety = function(){
+    var noticeFileBlock = document.getElementById("noticeFileBlock");
+    noticeFileBlock.style.visibility = "hidden";
+    var url = window.location.href;
+    var id = url.substring(url.indexOf('?')+1, url.length);
+    console.log(id);
+    this.setup(id);
+};
+
+smartSociety.prototype.setup = function(id){
+    var noticeSubject = document.getElementById("noticeSubject");
+    var noticeOwnerRecipients = document.getElementById("Owners");
+    var noticeTenantRecipients = document.getElementById("Tenants");
+    var noticeFileLink = document.getElementById("noticeFileLink");
+    var noticeFile = document.getElementById("noticeFile");
+    noticeFile.setAttribute('value','aaa'); 
+    var buttondiv = document.getElementById("buttondiv");
+    var deleteNoticeFileBtn = document.getElementById("deleteNoticeFileBtn");
+    deleteNoticeFileBtn.addEventListener('click',function(event){
+        event.preventDefault();
+        smartSociety.deleteNoticeFile(id, buttondiv);
+    });
+
     var saveNoticeBtn = document.getElementById("saveNoticeBtn");
     var publishNoticeBtn = document.getElementById("publishNoticeBtn");
-    saveNoticeBtn.addEventListener('click', this.saveNotice.bind(this));
-    publishNoticeBtn.addEventListener('click', this.publishNotice.bind(this));
-    console.log("hrllo");
+    saveNoticeBtn.addEventListener('click', function(){
+        smartSociety.saveNotice(id);
+    });
+    publishNoticeBtn.addEventListener('click', function(){
+        smartSociety.publishNotice(id);
+    });
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/getNotice?societyID=1&noticeID=" + id, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            var notice = JSON.parse(xhttp.responseText);
+            noticeSubject.value = notice.subject;
+            if(notice.owner == "true"){
+                noticeOwnerRecipients.checked = true;
+            }
+            else{
+                noticeOwnerRecipients.checked = false;
+            }
+
+            if(notice.tenant == "true"){
+                noticeTenantRecipients.checked = true;
+            }
+            else{
+                noticeTenantRecipients.checked = false;
+            }
+            var storageRef = storage.ref("/notices/");
+            storageRef.child(id).getDownloadURL().then(function(url){
+                var xhttpstorage = new XMLHttpRequest();
+                xhttpstorage.open('GET',url,true);
+                xhttpstorage.send();
+                xhttpstorage.onreadystatechange = function(){
+                   if(xhttpstorage.readyState == 4 && xhttpstorage.status == 200){
+                       var response = xhttpstorage.responseText;
+                       noticeFileLink.setAttribute('href', url);
+                   } 
+                };
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+        }
+    };
+};
+
+window.onload = function(){
+    window.smartSociety = new smartSociety();
+};
+
+smartSociety.prototype.deleteNoticeFile = function(id,buttondiv){
+   var noticeFileBlock = document.getElementById("noticeFileBlock");
+   var noticeFile = document.getElementById("noticeFile");
+    var reply = window.confirm("Are you sure you want to delete the notice file?. Info: This action is cannot be reversed.");
+    if(reply){
+        noticeFileBlock.style.visibility = "visible";
+        buttondiv.style.visibility = "hidden";
+        noticeFile.setAttribute('value','');
+    }
 }
 
-
-smartSociety.prototype.saveNotice = function () {
+smartSociety.prototype.saveNotice = function (id) {
     var noticeSubject = document.getElementById("noticeSubject");
     var noticeFile = document.getElementById("noticeFile");
     var noticeSubjectValue = noticeSubject.value;
     var noticeFileValue = noticeFile.value;
+    window.alert(noticeFileValue);
     var noticeTenants = document.getElementById("Tenants");
     var noticeOwner = document.getElementById("Owners")
     var noticeOwnerValue = "false";
@@ -49,26 +128,18 @@ smartSociety.prototype.saveNotice = function () {
         noticeTenantValue = noticeTenants.value;
     }
 
-    xhttp.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/getNoticeID" + "?societyID=1", true);
-    xhttp.send();
-    console.log("here");
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            noticeId = xhttp.responseText;
-            console.log(noticeId);
-            var noticespath = "/notices/" + ((parseInt(noticeId) + 1).toString());
-            if (noticeFileValue != "") {
-                var noticeStorageRef = storageref.ref(noticespath);
-                console.log(noticespath);
-                var $ = jQuery;
-                var file_data = $('#noticeFile').prop('files')[0];
-                noticeStorageRef.put(file_data);
-            }//TODO change the noticeid cloud function to remove +1 used above
-            //return true;
-        }
-    };
+    var noticespath = "/notices/" + id;
+    if (noticeFileValue != "") {
+        var noticeStorageRef = storageref.ref(noticespath);
+        console.log(noticespath);
+        var $ = jQuery;
+        var file_data = $('#noticeFile').prop('files')[0];
+        noticeStorageRef.put(file_data);
+    }//TODO change the noticeid cloud function to remove +1 used above
+    //return true;  
+
     var xhttp1 = new XMLHttpRequest();
-    xhttp1.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/createNotice" + "?societyID=1" + "&subject=" + noticeSubjectValue + "&tenant=" + noticeTenantValue + "&owner=" + noticeOwnerValue + "&isPublished=false&datetime=NA", true);
+    xhttp1.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/updateNotice" + "?societyID=1" + "&subject=" + noticeSubjectValue + "&tenant=" + noticeTenantValue + "&owner=" + noticeOwnerValue + "&isPublished=false&datetime=NA&noticeID=" + id, true);
     xhttp1.send();
     console.log("here");
     xhttp1.onreadystatechange = function () {
@@ -81,9 +152,10 @@ smartSociety.prototype.saveNotice = function () {
     };
 }
 
-smartSociety.prototype.publishNotice = function () {
+smartSociety.prototype.publishNotice = function (id) {
     var noticeSubject = document.getElementById("noticeSubject");
     var noticeFile = document.getElementById("noticeFile");
+    window.alert(noticeFile.value);
     var noticeSubjectValue = noticeSubject.value;
     var noticeFileValue = noticeFile.value;
     var noticeTenants = document.getElementById("Tenants");
@@ -160,7 +232,7 @@ smartSociety.prototype.publishNotice = function () {
     console.log(timestamp);
 
     var xhttp1 = new XMLHttpRequest();
-    xhttp1.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/createNotice" + "?societyID=1&subject=" + noticeSubjectValue + "&tenant=" + noticeTenantValue + "&owner=" + noticeOwnerValue + "&isPublished=true&datetime=" + timestamp, true);
+    xhttp1.open("GET", "https://us-central1-differentmodel-5b6b0.cloudfunctions.net/updateNotice" + "?societyID=1&subject=" + noticeSubjectValue + "&tenant=" + noticeTenantValue + "&owner=" + noticeOwnerValue + "&isPublished=true&datetime=" + timestamp + "&noticeID=" + id, true);
     xhttp1.send();
     console.log("here");
     xhttp1.onreadystatechange = function () {
@@ -178,8 +250,3 @@ smartSociety.prototype.publishNotice = function () {
             //return true;
 }
     
-
-
-window.onload = function () {
-    window.smartSociety = new smartSociety();
-};
